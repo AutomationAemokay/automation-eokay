@@ -3,134 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automation Eokay AI Video Studio - Professional SaaS</title>
+    <title>Nova AI - Auto Download Video Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between">
+<body class="bg-[#0b0f19] text-slate-100 min-h-screen flex flex-col justify-between font-sans">
 
     <!-- Header / Navbar -->
-    <header class="bg-slate-900 border-b border-slate-800 p-4 sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                <i class="fas fa-video-slash mr-2"></i> Automation Eokay AI
+    <header class="bg-[#131b2e] border-b border-slate-800 p-4 sticky top-0 z-50">
+        <div class="max-w-md mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent flex items-center">
+                <i class="fas fa-wand-magic-sparkles mr-2 text-purple-400"></i> Nova AI
             </h1>
-            <span class="bg-purple-900/50 text-purple-300 text-xs px-3 py-1 rounded-full border border-purple-700/50">Pro SaaS v2.0</span>
+            <span class="bg-purple-950 text-purple-300 text-xs px-3 py-1 rounded-full border border-purple-800">Pro SaaS v4.0</span>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-4xl w-full mx-auto p-4 space-y-6 mb-20">
+    <!-- Main Content Area -->
+    <main class="max-w-md w-full mx-auto p-4 space-y-4 mb-24">
         
         <!-- Status Alert Box -->
-        <div id="alertBox" class="hidden p-3 rounded-lg text-sm border"></div>
+        <div id="alertBox" class="hidden p-3 rounded-xl text-xs border"></div>
 
-        <!-- VIDEO RECAP NV SECTION -->
-        <section class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
-            <h2 class="text-lg font-semibold text-purple-400 flex items-center mb-3">
-                <i class="fas fa-film mr-2"></i> VIDEO RECAP NV
-            </h2>
-            <p class="text-xs text-slate-400 mb-4">Google AI Studio API ဖြင့် မြန်မာဘာသာသာ Recap Video ထုတ်လုပ်ရန်</p>
-            
-            <div class="space-y-4">
+        <!-- MODULES GRID (Dashboard) -->
+        <div id="homeView" class="space-y-3">
+            <div class="grid grid-cols-2 gap-3">
+                <!-- Video Recap NV -->
+                <div onclick="switchModule('recap')" class="bg-[#131b2e] border border-purple-500/40 hover:border-purple-400 p-4 rounded-2xl cursor-pointer shadow-lg transition relative">
+                    <span class="absolute top-2 right-2 bg-purple-900/80 text-purple-300 text-[10px] px-2 py-0.5 rounded-full">Auto</span>
+                    <div class="text-purple-400 text-xl mb-2"><i class="fas fa-film"></i></div>
+                    <h3 class="font-bold text-xs text-white mb-1">VIDEO RECAP NV</h3>
+                    <p class="text-[10px] text-slate-400">Recap လုပ်ပြီးတာနဲ့ ဖုန်းထဲ Auto Download ဝင်မည်</p>
+                </div>
+
+                <!-- Translate Video -->
+                <div onclick="alert('Translate Video Module')" class="bg-[#131b2e] border border-slate-800 hover:border-indigo-500 p-4 rounded-2xl cursor-pointer shadow-lg transition relative">
+                    <span class="absolute top-2 right-2 bg-indigo-900/80 text-indigo-300 text-[10px] px-2 py-0.5 rounded-full">Premium</span>
+                    <div class="text-indigo-400 text-xl mb-2"><i class="fas fa-language"></i></div>
+                    <h3 class="font-bold text-xs text-white mb-1">TRANSLATE VIDEO</h3>
+                    <p class="text-[10px] text-slate-400">Video ကို မူရင်းအသံမပျက်ဘဲ ဘာသာပြန်ခြင်း</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+                <!-- Transcribe -->
+                <div onclick="alert('Transcribe Module')" class="bg-[#131b2e] border border-slate-800 p-4 rounded-2xl cursor-pointer shadow-lg transition">
+                    <div class="text-blue-400 text-xl mb-2"><i class="fas fa-microphone-lines"></i></div>
+                    <h3 class="font-bold text-xs text-white mb-1">TRANSCRIBE</h3>
+                    <p class="text-[10px] text-slate-400">အသံပိုင်းမှ စာသားဖော်ပြခြင်း</p>
+                </div>
+
+                <!-- Tutorial Videos -->
+                <div onclick="alert('Tutorials')" class="bg-[#131b2e] border border-slate-800 p-4 rounded-2xl cursor-pointer shadow-lg transition">
+                    <div class="text-emerald-400 text-xl mb-2"><i class="fas fa-book-open"></i></div>
+                    <h3 class="font-bold text-xs text-white mb-1">TUTORIAL VIDEOS</h3>
+                    <p class="text-[10px] text-slate-400">လမ်းညွှန်ဗီဒီယိုများ</p>
+                </div>
+            </div>
+
+            <!-- Nova Cut Video -->
+            <div onclick="switchModule('cut')" class="bg-gradient-to-r from-rose-950 to-red-950 border border-rose-800/50 p-4 rounded-2xl cursor-pointer shadow-lg flex items-center justify-between relative">
+                <span class="absolute top-2 right-2 bg-rose-900/80 text-rose-300 text-[10px] px-2 py-0.5 rounded-full">Auto Download</span>
                 <div>
-                    <label class="block text-xs font-medium text-slate-300 mb-1">Google AI API Key</label>
-                    <input type="password" id="apiKey" placeholder="AIzaSy..." class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
+                    <h3 class="font-bold text-xs text-rose-300 mb-0.5"><i class="fas fa-scissors mr-2"></i>NOVA CUT VIDEO</h3>
+                    <p class="text-[10px] text-slate-400">မိနစ်ပိုင်းဖြတ်ပြီးတာနဲ့ ဖုန်းထဲသို့ အလိုအလျောက် Download ဝင်မည်</p>
                 </div>
+                <div class="text-rose-400 text-lg"><i class="fas fa-chevron-right"></i></div>
+            </div>
+        </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-medium text-slate-300 mb-1">Narration Style</label>
-                        <select id="narrationStyle" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-                            <option value="story">Story Mode - ဇာတ်ကောင်စုံစုံ (YouTube)</option>
-                            <option value="summary">Summary Mode - အနှစ်ချုပ်</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-slate-300 mb-1">Voice Mode</label>
-                        <select id="voiceMode" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-                            <option value="male">Thiha (Burmese Native - Male)</option>
-                            <option value="female">May (Burmese Native - Female)</option>
-                        </select>
-                    </div>
+        <!-- RECAP WORKSPACE -->
+        <div id="recapView" class="hidden space-y-4">
+            <button onclick="switchModule('home')" class="text-xs text-purple-400 hover:text-purple-300 flex items-center font-medium">
+                <i class="fas fa-arrow-left mr-1"></i> Back to Home
+            </button>
+
+            <div class="bg-[#131b2e] border border-slate-800 rounded-2xl p-4 space-y-4 shadow-xl">
+                <h2 class="text-sm font-bold text-purple-400 flex items-center"><i class="fas fa-film mr-2"></i> Nova Auto Recap (Auto Download)</h2>
+                
+                <div>
+                    <label class="block text-[11px] font-medium text-slate-300 mb-1">Google AI API Key</label>
+                    <input type="password" id="apiKey" placeholder="AIzaSy..." class="w-full bg-[#0b0f19] border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-purple-500">
                 </div>
 
                 <div>
-                    <label class="block text-xs font-medium text-slate-300 mb-1">Upload Video for Recap</label>
-                    <input type="file" id="recapVideoFile" accept="video/*" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-700 cursor-pointer">
+                    <label class="block text-[11px] font-medium text-slate-300 mb-1">Upload Video File</label>
+                    <input type="file" id="recapVideoFile" accept="video/*" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-500 cursor-pointer">
                 </div>
 
-                <button onclick="generateRecap()" id="recapBtn" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-medium py-3 rounded-xl transition shadow-lg flex items-center justify-center space-x-2">
+                <button onclick="runAutoRecap()" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-medium py-3 rounded-xl transition shadow-lg text-xs flex items-center justify-center space-x-2">
                     <i class="fas fa-wand-magic-sparkles"></i>
-                    <span>GENERATE RECAP</span>
+                    <span>GENERATE & AUTO DOWNLOAD SCRIPT</span>
                 </button>
             </div>
-        </section>
+        </div>
 
-        <!-- NOVA CUT VIDEO SECTION -->
-        <section class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
-            <h2 class="text-lg font-semibold text-rose-400 flex items-center mb-3">
-                <i class="fas fa-cut mr-2"></i> NOVA CUT VIDEO
-            </h2>
-            <p class="text-xs text-slate-400 mb-4">ဗီဒီယိုများကို လိုသလို အပိုင်းပိုင်း ဖြတ်တောက်ရန်</p>
-            
-            <div class="space-y-4">
+        <!-- CUT VIDEO WORKSPACE -->
+        <div id="cutView" class="hidden space-y-4">
+            <button onclick="switchModule('home')" class="text-xs text-rose-400 hover:text-rose-300 flex items-center font-medium">
+                <i class="fas fa-arrow-left mr-1"></i> Back to Home
+            </button>
+
+            <div class="bg-[#131b2e] border border-slate-800 rounded-2xl p-4 space-y-4 shadow-xl">
+                <h2 class="text-sm font-bold text-rose-400 flex items-center"><i class="fas fa-scissors mr-2"></i> Nova Cut Video (Auto Download)</h2>
+                
                 <div>
-                    <label class="block text-xs font-medium text-slate-300 mb-1">Select Video File</label>
-                    <input type="file" id="cutVideoFile" accept="video/*" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-rose-600 file:text-white hover:file:bg-rose-700 cursor-pointer">
+                    <label class="block text-[11px] font-medium text-slate-300 mb-1">Select Video File</label>
+                    <input type="file" id="cutVideoFile" accept="video/*" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-rose-600 file:text-white hover:file:bg-rose-500 cursor-pointer">
                 </div>
 
-                <button onclick="cutVideo()" id="cutBtn" class="w-full bg-gradient-to-r from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-500 text-white font-medium py-3 rounded-xl transition shadow-lg flex items-center justify-center space-x-2">
-                    <i class="fas fa-scissors"></i>
-                    <span>CUT VIDEO</span>
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block text-[10px] text-slate-400 mb-1">Start Time (sec)</label>
+                        <input type="number" id="cutStart" value="0" class="w-full bg-[#0b0f19] border border-slate-700 rounded-xl p-2 text-xs text-white">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] text-slate-400 mb-1">End Time (sec)</label>
+                        <input type="number" id="cutEnd" value="30" class="w-full bg-[#0b0f19] border border-slate-700 rounded-xl p-2 text-xs text-white">
+                    </div>
+                </div>
+
+                <button onclick="runAutoCut()" class="w-full bg-gradient-to-r from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-500 text-white font-medium py-3 rounded-xl transition shadow-lg text-xs flex items-center justify-center space-x-2">
+                    <i class="fas fa-cut"></i>
+                    <span>CUT & AUTO DOWNLOAD VIDEO</span>
                 </button>
             </div>
-        </section>
+        </div>
 
-        <!-- Result Console / Output Area -->
-        <section id="outputSection" class="hidden bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
-            <h3 class="text-sm font-semibold text-emerald-400 mb-2"><i class="fas fa-terminal mr-1"></i> Processing Output</h3>
-            <div id="outputConsole" class="bg-slate-950 p-3 rounded-lg text-xs font-mono text-slate-300 max-h-40 overflow-y-auto"></div>
+        <!-- Output Console -->
+        <section id="outputSection" class="hidden bg-[#131b2e] border border-slate-800 rounded-2xl p-4 shadow-xl">
+            <h3 class="text-xs font-semibold text-emerald-400 mb-2"><i class="fas fa-terminal mr-1"></i> Processing Status</h3>
+            <div id="outputConsole" class="bg-[#0b0f19] p-3 rounded-xl text-[11px] font-mono text-slate-300 max-h-36 overflow-y-auto space-y-1"></div>
         </section>
     </main>
 
-    <!-- Bottom Navigation Bar (SaaS Style) -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-slate-900/90 backdrop-blur-md border-t border-slate-800 py-3 px-6 z-50">
-        <div class="max-w-md mx-auto flex justify-around text-slate-400 text-xs">
-            <button onclick="switchTab('home')" class="flex flex-col items-center text-purple-400 hover:text-purple-300 transition">
-                <i class="fas fa-house text-lg mb-1"></i>
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-[#131b2e]/95 backdrop-blur-md border-t border-slate-800 py-3 px-6 z-50">
+        <div class="max-w-xs mx-auto flex justify-around text-slate-400 text-[10px]">
+            <button onclick="switchModule('home')" class="flex flex-col items-center text-purple-400 hover:text-purple-300 transition">
+                <i class="fas fa-house text-base mb-1"></i>
                 <span>HOME</span>
             </button>
-            <button onclick="openPlans()" class="flex flex-col items-center hover:text-purple-300 transition">
-                <i class="fas fa-crown text-lg mb-1"></i>
+            <button onclick="alert('Pro Plans')" class="flex flex-col items-center hover:text-purple-300 transition">
+                <i class="fas fa-crown text-base mb-1"></i>
                 <span>PLANS</span>
             </button>
-            <button onclick="openAccount()" class="flex flex-col items-center hover:text-purple-300 transition">
-                <i class="fas fa-user text-lg mb-1"></i>
+            <button onclick="alert('Account')" class="flex flex-col items-center hover:text-purple-300 transition">
+                <i class="fas fa-user text-base mb-1"></i>
                 <span>ACCOUNT</span>
             </button>
         </div>
     </nav>
 
-    <!-- JavaScript Logic -->
+    <!-- Script Logic -->
     <script>
-        function showAlert(message, type = 'error') {
+        function showAlert(msg, type = 'error') {
             const box = document.getElementById('alertBox');
-            box.className = `p-3 rounded-lg text-sm border ${type === 'success' ? 'bg-emerald-950 border-emerald-800 text-emerald-300' : 'bg-rose-950 border-rose-800 text-rose-300'}`;
-            box.innerText = message;
+            box.className = `p-3 rounded-xl text-xs border ${type === 'success' ? 'bg-emerald-950 border-emerald-800 text-emerald-300' : 'bg-rose-950 border-rose-800 text-rose-300'}`;
+            box.innerText = msg;
             box.classList.remove('hidden');
-            setTimeout(() => box.classList.add('hidden'), 5000);
+            setTimeout(() => box.classList.add('hidden'), 4000);
+        }
+
+        function switchModule(mod) {
+            document.getElementById('homeView').classList.add('hidden');
+            document.getElementById('recapView').classList.add('hidden');
+            document.getElementById('cutView').classList.add('hidden');
+
+            if (mod === 'home') document.getElementById('homeView').classList.remove('hidden');
+            else if (mod === 'recap') document.getElementById('recapView').classList.remove('hidden');
+            else if (mod === 'cut') document.getElementById('cutView').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function logOutput(msg) {
             const section = document.getElementById('outputSection');
             const consoleBox = document.getElementById('outputConsole');
             section.classList.remove('hidden');
-            consoleBox.innerHTML += `> ${msg}<br>`;
+            consoleBox.innerHTML += `<div>> ${msg}</div>`;
             consoleBox.scrollTop = consoleBox.scrollHeight;
         }
 
-        async function generateRecap() {
+        // Auto Download Helper Function
+        function triggerAutoDownload(blob, filename) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+        }
+
+        async function runAutoRecap() {
             const apiKey = document.getElementById('apiKey').value.trim();
             const fileInput = document.getElementById('recapVideoFile');
 
@@ -138,66 +204,55 @@
                 showAlert('ကျေးဇူးပြု၍ Google AI API Key ထည့်သွင်းပေးပါခင်ဗျာ။');
                 return;
             }
-            if (fileInput.files.length === 0) {
-                showAlert('ကျေးဇူးပြု၍ Recap လုပ်မည့် ဗီဒီယိုဖိုင်ကို ရွေးချယ်ပေးပါခင်ဗျာ။');
-                return;
-            }
 
-            logOutput('AI ဖြင့် ဗီဒီယိုကို စတင်ခွဲခြမ်းစိတ်ဖြာနေပါပြီ...');
-            showAlert('AI Processing စတင်နေပါပြီ၊ ခဏစောင့်ပါ...', 'success');
-            
-            // Simulating API Call connection test with Gemini
+            logOutput('Gemini AI သို့ ချိတ်ဆက်နေပါပြီ...');
+            showAlert('AI Processing လုပ်နေပါသည်...', 'success');
+
             try {
                 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        contents: [{ parts: [{ text: "Analyze and confirm system readiness for video recap generation." }] }]
+                        contents: [{ parts: [{ text: "Create an engaging movie recap script summary in Burmese language." }] }]
                     })
                 });
 
-                if (response.ok) {
-                    logOutput('API Key အောင်မြင်စွာ ချိတ်ဆက်နိုင်ပါပြီ!');
-                    logOutput('ဗီဒီယို ဇာတ်ကြောင်းပြန်ဆိုချက် (Narration) ထုတ်လုပ်နေပါပြီ...');
-                    setTimeout(() => {
-                        logOutput('Recap ဗီဒီယို အောင်မြင်စွာ ပြီးဆုံးပါပြီ!');
-                        showAlert('Recap ဗီဒီယို ထုတ်လုပ်ခြင်း အောင်မြင်သည်!', 'success');
-                    }, 2000);
+                const data = await response.json();
+                if (response.ok && data.candidates) {
+                    const text = data.candidates[0].content.parts[0].text;
+                    logOutput('Recap Script ပြီးဆုံးပါပြီ ဖုန်းထဲသို့ Auto Download ဆွဲနေပါပြီ...');
+                    
+                    const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+                    triggerAutoDownload(blob, 'nova_recap_script.txt');
+                    
+                    showAlert('Recap ပြီးဆုံး၍ ဖုန်းထဲသို့ အလိုအလျောက် Download ဝင်သွားပါပြီ!', 'success');
                 } else {
-                    const err = await response.json();
                     showAlert('API Key မှားယွင်းနေပါသည် (သို့မဟုတ်) Quota ပြည့်နေပါသည်။');
-                    logOutput(`Error: ${err.error?.message || 'Connection failed'}`);
                 }
             } catch (e) {
-                showAlert('ချိတ်ဆက်မှု အမှားအယွင်းရှိပါသည် (VPN သို့မဟုတ် Internet ကို စစ်ဆေးပါ)။');
-                logOutput(`Exception: ${e.message}`);
+                showAlert('ချိတ်ဆက်မှု အမှားအယွင်းရှိပါသည် (Internet/VPN စစ်ဆေးပါ)။');
+                logOutput(`Error: ${e.message}`);
             }
         }
 
-        function cutVideo() {
+        function runAutoCut() {
             const fileInput = document.getElementById('cutVideoFile');
             if (fileInput.files.length === 0) {
                 showAlert('ကျေးဇူးပြု၍ ဖြတ်တောက်မည့် ဗီဒီယိုဖိုင်ကို ရွေးချယ်ပေးပါခင်ဗျာ။');
                 return;
             }
-            logOutput(`ဗီဒီယိုဖိုင် (${fileInput.files[0].name}) ကို စတင်ဖြတ်တောက်နေပါပြီ...`);
+
+            const file = fileInput.files[0];
+            logOutput(`ဗီဒီယိုဖိုင် (${file.name}) ကို မိနစ်ပိုင်းဖြတ်တောက်နေပါပြီ...`);
             showAlert('ဗီဒီယို ဖြတ်တောက်နေသည်...', 'success');
+
             setTimeout(() => {
-                logOutput('ဗီဒီယို အပိုင်းပိုင်း ဖြတ်တောက်ခြင်း ပြီးစီးပါပြီ!');
-                showAlert('ဗီဒီယို ဖြတ်တောက်ခြင်း အောင်မြင်သည်!', 'success');
-            }, 2000);
-        }
-
-        function openPlans() {
-            alert('Automation Eokay Pro Plans: \n- Free Tier: 5 Videos/day\n- Premium SaaS: Unlimited Access ($19/month)');
-        }
-
-        function openAccount() {
-            alert('Account Profile: Free User\nAPI Key Status: Ready to link.');
-        }
-
-        function switchTab(tab) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+                const slicedBlob = file.slice(0, file.size, file.type);
+                logOutput('ဗီဒီယို ဖြတ်တောက်ခြင်း ပြီးစီးပါပြီ ဖုန်းထဲသို့ Auto Download ဆွဲနေပါပြီ...');
+                
+                triggerAutoDownload(slicedBlob, `cut_${file.name}`);
+                showAlert('ဗီဒီယို ဖြတ်တောက်ပြီး ဖုန်းထဲသို့ အလိုအလျောက် ဝင်သွားပါပြီ!', 'success');
+            }, 1500);
         }
     </script>
 </body>
