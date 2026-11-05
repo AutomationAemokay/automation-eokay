@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Eokay - AI Video Studio</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #131b2e;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: sans-serif;
+            margin: 0;
+            padding: 16px;
+        }
+        h1 {
+            text-align: center;
+            color: var(--accent-blue);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            border: 1px solid #1e293b;
+        }
+        .btn {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        select, input {
+            width: 100%;
+            padding: 10px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: white;
+            border-radius: 6px;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Automation Eokay AI</h1>
+
+    <div class="card">
+        <h3>🎬 VIDEO RECAP NV</h3>
+        <p style="color: var(--text-sub); font-size: 14px;">Google AI Studio API ဖြင့် မြန်မာဘာသာ Recap Video ထုတ်လုပ်ရန်</p>
+        
+        <label>Google AI API Key</label>
+        <input type="password" placeholder="AIzaSy...">
+
+        <label>Narration Style</label>
+        <select>
+            <option>Story Mode - ဇာတ်ကြောင်းပြော (YouTube)</option>
+            <option>Viral Mode - TikTok / Reels အတွက်</option>
+            <option>Hybrid Mode - ပေါင်းစပ်ပုံစံ</option>
+        </select>
+
+        <label>Voice Mode (Thiha - Burmese)</label>
+        <select>
+            <option>Thiha (Burmese Native - Male)</option>
+            <option>Nilar (Burmese Native - Female)</option>
+        </select>
+
+        <button class="btn">GENERATE RECAP</button>
+    </div>
+
+    <div class="card">
+        <h3>✂️ NOVA CUT VIDEO</h3>
+        <p style="color: var(--text-sub); font-size: 14px;">ဗီဒီယိုများကို လိုသလို အပိုင်းပိုင်း ဖြတ်တောက်ရန်</p>
+        <input type="file" accept="video/*">
+        <button class="btn" style="background: #ef4444;">CUT VIDEO</button>
+    </div>
+
+</body>
+</html>
